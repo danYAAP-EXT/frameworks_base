@@ -388,9 +388,12 @@ public class SenseProvider implements ServiceProvider {
         }
     }
 
-    public SenseProvider(Context context, BiometricStateCallback biometricStateCallback, FaceSensorPropertiesInternal sensorProps, LockoutResetDispatcher lockoutResetDispatcher) {
-        this(context, biometricStateCallback, sensorProps, lockoutResetDispatcher, new BiometricScheduler<>(context, 0, null));
-    }
+        public SenseProvider(Context context, BiometricStateCallback biometricStateCallback,
+                FaceSensorPropertiesInternal sensorProps, LockoutResetDispatcher lockoutResetDispatcher) {
+            this(context, biometricStateCallback, sensorProps, lockoutResetDispatcher,
+                    new BiometricScheduler<>(BiometricScheduler.SENSOR_TYPE_FACE,
+                            null /* gestureAvailabilityDispatcher */));
+        }
 
     private synchronized ISenseService getDaemon() {
         if (mTestHalEnabled) {
