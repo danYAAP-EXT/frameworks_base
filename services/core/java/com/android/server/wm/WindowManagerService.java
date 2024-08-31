@@ -9632,20 +9632,6 @@ public class WindowManagerService extends IWindowManager.Stub
         }
 
         @Override
-        public void registerDisplaySecureContentListener(DisplaySecureContentListener listener) {
-            synchronized (mGlobalLock) {
-                mDisplaySecureContentListeners.add(listener);
-            }
-        }
-
-        @Override
-        public void unregisterDisplaySecureContentListener(DisplaySecureContentListener listener) {
-            synchronized (mGlobalLock) {
-                mDisplaySecureContentListeners.remove(listener);
-            }
-        }
-
-        @Override
         public void requestAssistScreenshot(IAssistDataReceiver receiver, IBinder activityToken) {
             int displayId = DEFAULT_DISPLAY;
             synchronized (mGlobalLock) {
@@ -9657,6 +9643,20 @@ public class WindowManagerService extends IWindowManager.Stub
                 }
             }
             WindowManagerService.this.requestAssistScreenshotInternal(receiver, displayId);
+        }
+
+        @Override
+        public void registerDisplaySecureContentListener(DisplaySecureContentListener listener) {
+            synchronized (mGlobalLock) {
+                mDisplaySecureContentListeners.add(listener);
+            }
+        }
+
+        @Override
+        public void unregisterDisplaySecureContentListener(DisplaySecureContentListener listener) {
+            synchronized (mGlobalLock) {
+                mDisplaySecureContentListeners.remove(listener);
+            }
         }
     }
 
