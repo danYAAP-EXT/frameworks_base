@@ -179,6 +179,7 @@ public final class PermissionManager {
     private static final String PRINT_SPOOLER_PKG = "com.android.printspooler";
     private static final String FUSED_LOCATION_PKG = "com.android.location.fused";
     private static final String CELL_BROADCAST_SERVICE_PKG = "com.android.cellbroadcastservice";
+    private static final String FACEAUTH_PKG = "co.aospa.sense";
 
     /**
      * Refuse to install package if groups of permissions are bad
@@ -1380,6 +1381,7 @@ public final class PermissionManager {
         pkgNames.add(PRINT_SPOOLER_PKG);
         pkgNames.add(FUSED_LOCATION_PKG);
         pkgNames.add(CELL_BROADCAST_SERVICE_PKG);
+        pkgNames.add(FACEAUTH_PKG);
         for (int i = 0; i < INDICATOR_EXEMPTED_PACKAGES.length; i++) {
             String exemptedPackage = INDICATOR_EXEMPTED_PACKAGES[i];
             if (exemptedPackage != null) {
