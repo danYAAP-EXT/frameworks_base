@@ -85,4 +85,7 @@
     <!-- StatusBar burn-in protection -->
     <dimen name="horizontal_max_shift">4dp</dimen>
     <dimen name="vertical_max_shift">4dp</dimen>
+    
+    <!-- Face unlock icon -->
+    <dimen name="face_unlock_icon_margin_top">6dp</dimen>
 </resources>
