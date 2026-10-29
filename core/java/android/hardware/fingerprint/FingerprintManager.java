@@ -101,7 +101,6 @@ import javax.crypto.Mac;
 @RequiresFeature(PackageManager.FEATURE_FINGERPRINT)
 public class FingerprintManager implements BiometricAuthenticator, BiometricFingerprintConstants {
     private static final String TAG = "FingerprintManager";
-    private static final boolean DEBUG = false;
 
     private static final boolean DEBUG = false;
 
